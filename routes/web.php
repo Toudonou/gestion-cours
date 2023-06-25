@@ -30,6 +30,8 @@ Route::get('/logout', function () {
     return view('login');
 })->name('logout');
 
+Route::get('/', [DirecteurController::class, 'index'])->name('login-directeurs');
+
 
 /** ACTIONS DIRECTEURS */
 Route::get('/directeurs/login', [DirecteurController::class, 'index'])->name('login-directeurs');
