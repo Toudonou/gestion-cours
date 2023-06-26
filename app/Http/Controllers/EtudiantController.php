@@ -46,9 +46,18 @@ class EtudiantController extends Controller
         }
     }
 
+    // public function home(int $id){
+    //     $etudiant = Etudiant::findOrFail($id);
+    //     return view('etudiant.home', ['etudiant' => $etudiant]);
+    // }
+
     public function home(int $id){
         $etudiant = Etudiant::findOrFail($id);
-        return view('etudiant.home', ['etudiant' => $etudiant]);
+        $cours =  CoursLocal::where('filiere', '=', $etudiant->filiere)
+                    ->orderby('semestre')
+                    ->paginate(8);
+        
+        return view('etudiant.homeLocal', ['etudiant' => $etudiant, 'cours' => $cours]);
     }
 
     public function homeCoursLocal(int $id){

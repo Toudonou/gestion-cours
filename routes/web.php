@@ -4,7 +4,6 @@ use App\Http\Controllers\DirecteurController;
 use App\Http\Controllers\EnseignantLocalController;
 use App\Http\Controllers\EnseignantMissionnaireController;
 use App\Http\Controllers\EtudiantController;
-use App\Models\Etudiant;
 use Illuminate\Support\Facades\Route;
 
 /*
